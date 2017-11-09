@@ -1,6 +1,6 @@
 <?php
 
-//define('YII_DEBUG', true);
+define('YII_DEBUG', true);
 
 require_once('serverconfig.php');
 require_once('yaamp/defaultconfig.php');

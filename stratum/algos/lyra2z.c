@@ -32,7 +32,7 @@ void lyra2z_hash(const char* input, char* output, uint32_t len)
 	sph_blake256(&ctx_blake, input, len);
 	sph_blake256_close(&ctx_blake, hashB);
 
-	LYRA2z(hash, 32, hashB, 32, hashB, 32, 8, 8, 8);
+	LYRA2(hash, 32, hashB, 32, hashB, 32, 8, 8, 8);
 
 	memcpy(output, hash, 32);
 }

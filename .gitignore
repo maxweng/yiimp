@@ -18,3 +18,5 @@ web/serverconfig.php
 web/assets/
 *.rej
 *.orig
+db/mysql
+db/sql

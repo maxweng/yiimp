@@ -70,8 +70,8 @@ return array(
 			'keyPrefix'=>'',
 			'servers'=>array(
 				array(
-					'host'=>'127.0.0.1',
-					'port'=> 11211,
+					'host'=>YAAMP_MEMCACHE_URL,
+					'port'=>YAAMP_MEMCACHE_PORT,
 					'weight'=> 60,
 				),
 			),
