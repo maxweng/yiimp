@@ -106,7 +106,11 @@ $('#algo_select').change(function(event)
 <table width=100%><tr><td valign=top width=33%>
 
 <div class="main-left-box">
-<div class="main-left-title">Last 48 Hours</div>
+<div class="main-left-title">
+end;
+echo Yii::t('stats', 'Last 48 Hours');
+echo <<<end
+</div>
 <div class="main-left-inner">
 
 <ul>
@@ -127,7 +131,11 @@ $('#algo_select').change(function(event)
 <td valign=top width=33%>
 
 <div class="main-left-box">
-<div class="main-left-title">Last 7 Days</div>
+<div class="main-left-title">
+end;
+echo Yii::t('stats', 'Last 7 Days');
+echo <<<end
+</div>
 <div class="main-left-inner">
 
 <ul>
@@ -148,7 +156,11 @@ $('#algo_select').change(function(event)
 <td valign=top width=33%>
 
 <div class="main-left-box">
-<div class="main-left-title">Last 30 Days</div>
+<div class="main-left-title">
+end;
+echo Yii::t('stats', 'Last 30 Days');
+echo <<<end
+</div>
 <div class="main-left-inner">
 
 <ul>

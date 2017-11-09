@@ -5,7 +5,7 @@ $algo = user()->getState('yaamp-algo');
 if($algo == 'all') return;
 
 echo "<div class='main-left-box'>";
-echo "<div class='main-left-title'>Pool Stats ($algo)</div>";
+echo "<div class='main-left-title'>" . Yii::t('main', 'Pool Stats') . " ($algo)</div>";
 echo "<div class='main-left-inner'>";
 
 echo <<<END

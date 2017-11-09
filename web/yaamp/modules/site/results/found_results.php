@@ -14,7 +14,7 @@ $algo = user()->getState('yaamp-algo');
 $count = getparam('count');
 $count = $count? $count: 50;
 
-WriteBoxHeader("Last $count Blocks ($algo)");
+WriteBoxHeader(Yii::t('main', "Last {count} Blocks ({algo})", array('{count}'=>$count, '{algo}'=>$algo)));
 
 $criteria = new CDbCriteria();
 $criteria->condition = "t.category NOT IN ('stake','generated')";

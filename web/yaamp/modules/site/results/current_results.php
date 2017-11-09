@@ -3,7 +3,7 @@
 $defaultalgo = user()->getState('yaamp-algo');
 
 echo "<div class='main-left-box'>";
-echo "<div class='main-left-title'>Pool Status</div>";
+echo "<div class='main-left-title'>" . Yii::t('main', 'Pool Status') . "</div>";
 echo "<div class='main-left-inner'>";
 
 showTableSorter('maintable1', "{

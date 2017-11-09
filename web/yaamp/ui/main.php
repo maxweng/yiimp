@@ -74,7 +74,7 @@ function showItemHeader($selected, $url, $name)
 	if($selected) $selected_text = "class='selected'";
 	else $selected_text = '';
 
-	echo "<span><a $selected_text href='$url'>$name</a></span>";
+	echo "<span><a $selected_text href='$url'>" . Yii::t('main', $name) . "</a></span>";
 	echo "&nbsp;";
 }
 
@@ -127,7 +127,7 @@ function showPageHeader()
 	$mining = getdbosql('db_mining');
 	$nextpayment = date('H:i T', $mining->last_payout+YAAMP_PAYMENTS_FREQ);
 
-	echo '<span style="font-size: .8em;">Next Payout: '.$nextpayment.'</span>';
+	echo '<span style="font-size: .8em;">' . Yii::t('main', 'Next Payout: ') . $nextpayment.'</span>';
 
 	echo "</div>";
 	echo "</div>";

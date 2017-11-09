@@ -1,6 +1,7 @@
 <?php
 
 return array(
+	'language'=>'zh_cn',
 	'name'=>YAAMP_SITE_URL,
 
 	'defaultController'=>'site',

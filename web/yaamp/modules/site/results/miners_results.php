@@ -24,7 +24,7 @@ $total_invalid = !$this->admin ? 0 : controller()->memcache->get_database_scalar
 	"SELECT hashrate_bad FROM hashrate WHERE algo=:algo ORDER BY time DESC LIMIT 1", array(':algo'=>$algo)
 );
 
-WriteBoxHeader("Miners Version ($algo)");
+WriteBoxHeader( Yii::t('mining', "Miners Version ({algo})", array('{algo}'=>$algo)));
 
 //showTableSorter('maintable2');
 echo <<<end

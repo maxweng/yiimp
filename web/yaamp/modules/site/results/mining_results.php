@@ -33,9 +33,9 @@ else
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-$coin_count = $count > 1 ? "on $count wallets" : 'on a single wallet';
-$miner_count = $worker > 1 ? "$worker miners" : "$worker miner";
-WriteBoxHeader("Mining $coin_count $total_rate_d, $miner_count");
+$coin_count = $count > 1 ? Yii::t('main', 'on "{count}" wallets', array('{count}'=>$count)) : Yii::t('main', 'on a single wallet');
+$miner_count = $worker > 1 ? Yii::t('main', '{worker} miners', array('{worker}'=>$worker)) : Yii::t('main', '{worker} miner', array('{worker}'=>$worker));
+WriteBoxHeader( Yii::t('main', 'Mining ') . "$coin_count $total_rate_d, $miner_count");
 
 showTableSorter('maintable3', "{
 	tableClass: 'dataGrid2',
