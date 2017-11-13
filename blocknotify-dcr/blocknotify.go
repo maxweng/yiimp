@@ -16,27 +16,28 @@ import (
 	"bytes" // dcrd > 0.6+
 	"github.com/decred/dcrd/wire"
 
-	"github.com/decred/dcrrpcclient"
-//	"github.com/decred/dcrutil"
+	"github.com/decred/dcrd/rpcclient"
+//	"github.com/decred/dcrd/dcrutil"
 )
 
 const (
 	processName = "blocknotify"    // set the full path if required
-	stratumDest = "yaamp.com:3252" // stratum host:port
-	coinId = "1574"                // decred database coin id
+	stratumDest = "127.0.0.1:7337" // stratum host:port
+	coinId = "1307"                // decred database coin id
 
-	dcrdUser = "yiimprpc"
-	dcrdPass = "myDcrdPassword"
+	dcrdHost = "dcrd:19109"
+	dcrdUser = "root"
+	dcrdPass = "2qwjdh0vsmqpzbcvve0m2c5p"
 
-	debug = false
+	debug = true
 )
 
 func main() {
 	// Only override the handlers for notifications you care about.
 	// Also note most of these handlers will only be called if you register
-	// for notifications.  See the documentation of the dcrrpcclient
+	// for notifications.  See the documentation of the rpcclient
 	// NotificationHandlers type for more details about each handler.
-	ntfnHandlers := dcrrpcclient.NotificationHandlers{
+	ntfnHandlers := rpcclient.NotificationHandlers{
 
 		OnBlockConnected: func(blockHeader []byte, transactions [][]byte) {
 			// log.Printf("Block bytes: %v %v", blockHeader, transactions)
@@ -69,8 +70,8 @@ func main() {
 		log.Printf("%s, trying without TLS...", err)
 	}
 
-	connCfg := &dcrrpcclient.ConnConfig{
-		Host:         "127.0.0.1:9109",
+	connCfg := &rpcclient.ConnConfig{
+		Host:         dcrdHost,
 		Endpoint:     "ws", // websocket
 
 		User:         dcrdUser,
@@ -80,7 +81,7 @@ func main() {
 		Certificates: certs,
 	}
 
-	client, err := dcrrpcclient.New(connCfg, &ntfnHandlers)
+	client, err := rpcclient.New(connCfg, &ntfnHandlers)
 	if err != nil {
 		log.Fatalln(err)
 	}
